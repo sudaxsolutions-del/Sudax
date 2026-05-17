@@ -14,6 +14,7 @@
             --white: #ffffff;
             --text-dark: #1e293b;
             --text-light: #64748b;
+            --whatsapp-green: #25D366;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: var(--light-bg); color: var(--text-dark); line-height: 1.6; }
@@ -33,8 +34,11 @@
         .hero-container { max-width: 800px; margin: 0 auto; }
         .hero h1 { font-size: 42px; margin-bottom: 20px; font-weight: 800; }
         .hero p { font-size: 20px; margin-bottom: 40px; opacity: 0.9; }
-        .hero .btn-main { background-color: var(--primary-cyan); color: var(--dark-blue); text-decoration: none; padding: 15px 35px; border-radius: 30px; font-size: 18px; font-weight: bold; box-shadow: 0 4px 15px rgba(0, 180, 216, 0.4); transition: transform 0.3s, box-shadow 0.3s; display: inline-block; }
-        .hero .btn-main:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0, 180, 216, 0.6); }
+        .contact-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
+        .btn-main { text-decoration: none; padding: 12px 30px; border-radius: 30px; font-size: 16px; font-weight: bold; transition: transform 0.3s, box-shadow 0.3s; display: inline-flex; align-items: center; gap: 10px; }
+        .btn-whatsapp { background-color: var(--whatsapp-green); color: white; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); }
+        .btn-email { background-color: var(--primary-cyan); color: var(--dark-blue); box-shadow: 0 4px 15px rgba(0, 180, 216, 0.4); }
+        .btn-main:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
         .services { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
         .section-title { text-align: center; margin-bottom: 50px; }
         .section-title h2 { font-size: 32px; color: var(--dark-blue); margin-bottom: 10px; }
@@ -51,14 +55,6 @@
         .about-text p { color: var(--text-light); margin-bottom: 20px; font-size: 16px; }
         .about-identity { background: linear-gradient(135deg, rgba(11, 79, 140, 0.05) 0%, rgba(0, 180, 216, 0.05) 100%); padding: 40px; border-radius: 15px; border: 1px dashed var(--slate-gray); text-align: center; }
         .about-identity svg { width: 120px; height: 120px; margin-bottom: 20px; }
-        .contact-section { max-width: 600px; margin: 80px auto; padding: 0 20px; text-align: center; }
-        .contact-form { background-color: var(--white); padding: 40px; border-radius: 10px; box-shadow: 0 5px 25px rgba(0,0,0,0.05); margin-top: 30px; text-align: right; }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--dark-blue); }
-        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 5px; font-size: 15px; outline: none; transition: border-color 0.3s; }
-        .form-group input:focus, .form-group textarea:focus { border-color: var(--primary-cyan); }
-        .btn-submit { background-color: var(--primary-blue); color: var(--white); border: none; padding: 12px 30px; font-size: 16px; font-weight: bold; border-radius: 5px; cursor: pointer; width: 100%; transition: background-color 0.3s; }
-        .btn-submit:hover { background-color: var(--dark-blue); }
         footer { background-color: var(--dark-blue); color: var(--white); padding: 40px 20px; text-align: center; font-size: 14px; }
         footer p { opacity: 0.7; }
         @media (max-width: 768px) { .navbar { flex-direction: column; gap: 15px; } .hero h1 { font-size: 30px; } .hero p { font-size: 16px; } .about-container { grid-template-columns: 1fr; } }
@@ -78,17 +74,26 @@
             <ul class="nav-links">
                 <li><a href="#services">خدماتنا</a></li>
                 <li><a href="#about">عن الشركة</a></li>
-                <li><a href="#contact" class="btn-contact">تواصل معنا</a></li>
+                <li><a href="https://wa.me/249000000000" class="btn-contact">تواصل عبر واتساب</a></li>
             </ul>
         </nav>
     </header>
+
     <section class="hero">
         <div class="hero-container">
             <h1>Smart Solutions for Modern Business</h1>
             <p>نحن في Sudax نبتكر الحلول الرقمية والأنظمة الذكية لمساعدة الشركات الصغيرة والمتوسطة على النمو وإدارة عمليات البيع والشراء بكفاءة واحترافية.</p>
-            <a href="#contact" class="btn-main">ابدأ مشروعك الآن</a>
+            <div class="contact-buttons">
+                <a href="https://wa.me/249901319199?text=مرحباً%20Sudax%20Solutions،%20أود%20الاستفسار%20عن%20خدماتكم" class="btn-main btn-whatsapp" target="_blank">
+                    💬 تواصل عبر الواتساب
+                </a>
+                <a href="sudaxsolutions@gmail.com"?subject=طلب استشارة برمجية" class="btn-main btn-email">
+                    ✉️ راسلنا بريدياً
+                </a>
+            </div>
         </div>
     </section>
+
     <section id="services" class="services">
         <div class="section-title">
             <h2>خدماتنا الاحترافية</h2>
@@ -112,6 +117,7 @@
             </div>
         </div>
     </section>
+
     <section id="about" class="about">
         <div class="about-container">
             <div class="about-text">
@@ -130,33 +136,10 @@
             </div>
         </div>
     </section>
-    <section id="contact" class="contact-section">
-        <div class="section-title">
-            <h2>دعنا نبنِ نظامك القادم</h2>
-            <p>تواصل معنا اليوم للحصول على استشارة مجانية حول الحل البرمجي الأنسب لشركتك</p>
-        </div>
-        <form class="contact-form" onsubmit="event.preventDefault(); alert('تم استلام رسالتك بنجاح! سيتواصل فريق Sudax معك قريباً.');">
-            <div class="form-group">
-                <label for="name">اسم الشركة / العميل</label>
-                <input type="text" id="name" required placeholder="أدخل الاسم">
-            </div>
-            <div class="form-group">
-                <label for="email">البريد الإلكتروني</label>
-                <input type="email" id="email" required placeholder="name@company.com">
-            </div>
-            <div class="form-group">
-                <label for="service-type">الخدمة المطلوبة</label>
-                <input type="text" id="service-type" placeholder="مثال: نظام مبيعات ومخازن، موقع تعريفي">
-            </div>
-            <div class="form-group">
-                <label for="message">تفاصيل المشروع</label>
-                <textarea id="message" rows="4" required placeholder="اشرح لنا لمحة بسيطة عن النظام أو الموقع المطلوب..."></textarea>
-            </div>
-            <button type="submit" class="btn-submit">إرسال الطلب</button>
-        </form>
-    </section>
+
     <footer>
         <p>&copy; 2026 Sudax Solutions. جميع الحقوق محفوظة.</p>
     </footer>
 </body>
 </html>
+
